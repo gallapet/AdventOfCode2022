@@ -8,6 +8,8 @@ def main():
             calories_sum = 0
         else:
             calories_sum += int(calories)
+    if calories_sum != 0:
+        calories_by_elf.append(calories_sum)
     calories_by_elf.sort(reverse=True)
     print(calories_by_elf[0])
     print(sum(calories_by_elf[:3]))
