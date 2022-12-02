@@ -26,7 +26,6 @@ def opponent_chose_paper(prediction):
     elif prediction == "Z":
         return 9
 
-
 def opponent_chose_scissors(prediction):
     if prediction == "X":
         return 2
@@ -34,7 +33,6 @@ def opponent_chose_scissors(prediction):
         return 6
     elif prediction == "Z":
         return 7
-
 
 if __name__ == "__main__":
     main()
