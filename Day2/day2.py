@@ -12,11 +12,11 @@ def main():
 
 def opponent_chose_rock(prediction):
     if prediction == "X":
-        return 4
-    elif prediction == "Y":
-        return 8
-    elif prediction == "Z":
         return 3
+    elif prediction == "Y":
+        return 4
+    elif prediction == "Z":
+        return 8
 
 def opponent_chose_paper(prediction):
     if prediction == "X":
@@ -29,11 +29,11 @@ def opponent_chose_paper(prediction):
 
 def opponent_chose_scissors(prediction):
     if prediction == "X":
-        return 7
-    elif prediction == "Y":
         return 2
-    elif prediction == "Z":
+    elif prediction == "Y":
         return 6
+    elif prediction == "Z":
+        return 7
 
 
 if __name__ == "__main__":
