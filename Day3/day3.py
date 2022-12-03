@@ -28,10 +28,5 @@ def find_common_letter(first_half, second_half):
         if letter in [*second_half]:
             return letter
 
-def find_common_in_three(first, second, third):
-    for letter in [*first]:
-        if letter in [*second] and letter in [*third]:
-            return letter
-
 if __name__ == "__main__":
     main()
