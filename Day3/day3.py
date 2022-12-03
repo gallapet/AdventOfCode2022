@@ -11,7 +11,6 @@ def main():
         common_letter = find_common_letter(first_half, second_half)
         total_priority += get_total_priority(common_letter)
         input_lines.append(line)
-
     print(total_priority)
 
     groups = [input_lines[i:i + 3] for i in range(0, len(input_lines), 3)]
