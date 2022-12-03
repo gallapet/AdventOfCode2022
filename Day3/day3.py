@@ -1,19 +1,27 @@
+import requests
+
+session = open('../session.txt', 'r')
+headers = {"Cookie": f"{session.read()}"}
+
 priority = {x: y for (x, y) in zip('abcdefghijklmnopqrstuvwxyz', range(1, 27))}
 
 def main():
-    input_data = open('inputDay3.txt', 'r')
+    response = requests.get("https://adventofcode.com/2022/day/3/input", headers=headers)
+    input_data = response.text
     total_priority = 0
     input_lines = []
 
-    for line in input_data:
-        halfway_point = int((len(line) - 1) / 2)
+    for line in input_data.split('\n'):
+        if line == '':
+            break
+        halfway_point = int(len(line) / 2)
         first_half, second_half = line[:halfway_point], line[halfway_point:]
         common_letter = find_common_letter(first_half, second_half)
         total_priority += get_total_priority(common_letter)
         input_lines.append(line)
     print(total_priority)
 
-    groups = [input_lines[i:i + 3] for i in range(0, len(input_lines), 3)]
+    groups = [input_lines[i:i+3] for i in range(0, len(input_lines), 3)]
     badge_total = 0
     for group in groups:
         badge = find_common_in_group(group)
