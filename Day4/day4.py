@@ -6,7 +6,6 @@ def read_data(testing):
 
 def main():
     input_data = [line.replace('\n', '') for line in read_data(testing=False)]
-    print(input_data)
     part_one_solution = solve_part_one(input_data)
     part_two_solution = solve_part_two(input_data)
     print(f"The answer to Part 1 is: {part_one_solution}")
