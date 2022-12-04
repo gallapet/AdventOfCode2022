@@ -5,9 +5,9 @@ def read_data(testing):
     return open('inputDay4.txt')
 
 def main():
-    input_data = read_data(testing=False)
-    part_one_solution = solve_part_one(input_data)
-    part_two_solution = solve_part_two(input_data)
+    test_mode = False
+    part_two_solution = solve_part_two(read_data(testing=test_mode))
+    part_one_solution = solve_part_one(read_data(testing=test_mode))
     print(f"The answer to Part 1 is: {part_one_solution}")
     print(f"The answer to Part 2 is: {part_two_solution}")
 
@@ -32,7 +32,6 @@ def compare_elves(first, second):
 
 def solve_part_two(data):
     total = 0
-    print(data.read())
     for line in data:
         elf_assignment = line.split(',')
         first_elf, second_elf = elf_assignment[0], elf_assignment[1].replace('\n', '')
