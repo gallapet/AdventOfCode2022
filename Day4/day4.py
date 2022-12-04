@@ -5,9 +5,10 @@ def read_data(testing):
     return open('inputDay4.txt')
 
 def main():
-    test_mode = False
-    part_two_solution = solve_part_two(read_data(testing=test_mode))
-    part_one_solution = solve_part_one(read_data(testing=test_mode))
+    input_data = [line.replace('\n', '') for line in read_data(testing=False)]
+    print(input_data)
+    part_one_solution = solve_part_one(input_data)
+    part_two_solution = solve_part_two(input_data)
     print(f"The answer to Part 1 is: {part_one_solution}")
     print(f"The answer to Part 2 is: {part_two_solution}")
 
@@ -15,7 +16,7 @@ def solve_part_one(data):
     total = 0
     for line in data:
         elf_assignment = line.split(',')
-        first_elf, second_elf = elf_assignment[0], elf_assignment[1].replace('\n', '')
+        first_elf, second_elf = elf_assignment[0], elf_assignment[1]
         total += compare_elves(first_elf, second_elf)
     return total
 
@@ -34,7 +35,7 @@ def solve_part_two(data):
     total = 0
     for line in data:
         elf_assignment = line.split(',')
-        first_elf, second_elf = elf_assignment[0], elf_assignment[1].replace('\n', '')
+        first_elf, second_elf = elf_assignment[0], elf_assignment[1]
         total += find_overlaps(first_elf, second_elf)
     return total
 

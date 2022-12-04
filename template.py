@@ -5,9 +5,9 @@ def read_data(testing):
     return open('inputDayX.txt')
 
 def main():
-    test_mode = True
-    part_one_solution = solve_part_one(read_data(testing=test_mode))
-    part_two_solution = solve_part_two(read_data(testing=test_mode))
+    input_data = [line.replace('\n', '') for line in read_data(testing=True)]
+    part_one_solution = solve_part_one(input_data)
+    part_two_solution = solve_part_two(input_data)
     print(f"The answer to Part 1 is: {part_one_solution}")
     print(f"The answer to Part 2 is: {part_two_solution}")
 
