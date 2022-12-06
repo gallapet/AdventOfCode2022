@@ -2,7 +2,7 @@
 def read_data(testing):
     if testing:
         return open('sample.txt')
-    return open('inputDaytest.txt')
+    return open('inputDaypy.txt')
 
 def main():
     input_data = [line.replace('\n', '') for line in read_data(testing=True)]
